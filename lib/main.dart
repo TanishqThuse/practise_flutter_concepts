@@ -1,9 +1,11 @@
 //Day 1 : Flutter basics concepts and all
 //Day 2 : Simple login page and all
-//Day 3 : Simecode
+//Day 3 : Simple code
 //Day 4 : FInally adding image to login page and wiriting a bit code for it
 //Day 5 : More on routing of flutter -> Stateless and stateful widgets finally understood
 //Day 6 : More on statefull widget and animations, login simultaneously name display etc
+//Day 7 : More on animations and routing, QnA on Flutter MCQ, Revision of all concepts
+//Day 8 : Adding validation of username and password being added by user, also password > 3 char & more stuff
 
 import 'dart:html';
 
