@@ -1,10 +1,23 @@
 //Day 1 : Flutter basics concepts and all
 //Day 2 : Simple login page and all
-//Day 3 : 
+//Day 3 : Simecode
+//Day 4 : FInally adding image to login page and wiriting a bit code for it
+//Day 5 : More on routing of flutter -> Stateless and stateful widgets finally understood
+//Day 6 : More on statefull widget and animations, login simultaneously name display etc
+
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:practise_flutter_concepts/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:practise_flutter_concepts/utils/routes.dart';
+
+//no hot reload => Stateless widget is data-less => we use this when we don't bother doing hot reload muhc often
+//We do not hot reload => Statefull widget is full of data => if a project required more hot reload we use it 
+// => agar kuch change ayega to use karo statefull agar changes nhi ayege uski state me to statless
+// Example : Bank apps me statefull use karo as money changes
+// College ka ghatiya app fees bharne ke bhad bhi no show  Stateless
+
 
 void main() {
   runApp(MyApp());
@@ -28,8 +41,8 @@ Widget build(BuildContext context) {
       "/" : (context) => LoginPage(),
       // "/" : (context) => new LoginPage(), both are same
       // which means dart compiler is smart enought to make us not mention new for creating object of LoginPage class even though it is an object
-      // "/home" : (context) => HomePage(),
-      "/login":(context) => LoginPage(),
+      MyRoutes.homeRoute : (context) => HomePage(),
+      MyRoutes.loginRoute:(context) => LoginPage(),
     },
 
     darkTheme: ThemeData(
@@ -43,7 +56,14 @@ class HomePage extends StatelessWidget {
       @override
       Widget build(BuildContext context) {
         return Container(
-          child: (Text("31 hours flutter one shot")),
+          // child: (Text("31 hours flutter one shot")),
+          child: ElevatedButton(
+            child: Text("Go to Login Page"),
+            onPressed: () => {
+              Navigator.pushNamed(context, MyRoutes.loginRoute)
+            }
+            //Now we must make sure user always writes name and password before login working
+          ),
           // Your widget code here
         );
       }
